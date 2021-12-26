@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@font-face {
+  font-family: 'Rubik';
+  src: url("../f/Rubik-Regular.ttf");
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+:root {
+  --oneVh: 1vh ;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Rubik";
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (max-width: 230px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 2000px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 2000px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+body {
+  width: 100vw;
+  max-width: 3000px;
+  margin: auto;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Rubik";
+}
+
+.properties,
+#map-section {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.properties {
+  position: relative;
+  min-height: 25rem;
+  max-height: 26rem;
+}
+
+@media (min-width: 600px) {
+  .properties {
+    min-height: 20rem;
+    max-height: 20rem;
+  }
+}
+
+.properties__heading, .properties__form, .properties__display {
+  position: absolute;
+}
+
+.properties__heading {
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.properties__form {
+  top: 42%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (min-width: 600px) {
+  .properties__form {
+    top: 48%;
+  }
+}
+
+.properties__display {
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 60%);
+          transform: translate(-50%, 60%);
+}
+
+@media (min-width: 600px) {
+  .properties__display {
+    -webkit-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+}
+
+.properties {
+  background: url("../images/pattern-bg.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 3;
+}
+
+.properties__heading {
+  color: #fff;
+  font-family: "Rubik";
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 1.8rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.properties__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 85%;
+  height: 4rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+@media (min-width: 375px) and (max-width: 700px) {
+  .properties__form {
+    width: 60%;
+  }
+}
+
+@media (min-width: 700px) {
+  .properties__form {
+    width: 40%;
+  }
+}
+
+.properties__form input {
+  outline: none;
+  border: none;
+  padding: 0 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: inherit;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: white;
+}
+
+.properties__form button {
+  outline: none;
+  border: none;
+  background: #2b2b2b;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4rem;
+          flex: 0 0 4rem;
+}
+
+.properties__form button:hover {
+  background: #5e5e5e;
+}
+
+.properties__form button img {
+  width: 1.2rem;
+  height: 1.5rem;
+}
+
+.properties__display.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.properties__display {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: white;
+  border-radius: 1rem;
+  width: 85%;
+  text-align: center;
+  padding: 2rem 2rem;
+  -webkit-box-shadow: 0 0 3px rgba(150, 150, 150, 0.21);
+          box-shadow: 0 0 3px rgba(150, 150, 150, 0.21);
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+@media (min-width: 600px) {
+  .properties__display {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    text-align: left;
+  }
+}
+
+.properties .db {
+  letter-spacing: .05em;
+  padding: .75rem;
+}
+
+@media (min-width: 600px) {
+  .properties .db:not(:first-child) {
+    border-left: 1px solid rgba(150, 150, 150, 0.2);
+  }
+}
+
+.properties .db__title {
+  font-size: 1rem;
+  margin: .5rem 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #969696;
+}
+
+.properties .db__content {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+#map-section {
+  position: relative;
+  z-index: 1;
+  min-height: 100rem;
+  max-height: 101rem;
+}
+
+#map-section #map {
+  width: 100%;
+  height: 100%;
+}
+
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=main.css.map */

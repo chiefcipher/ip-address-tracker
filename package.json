@@ -1,0 +1,18 @@
+{
+  "name": "ip-address-tracker-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "server": "live-server" , 
+    "watch" : "node-sass scss/main.scss css/main.css -w" , 
+    "go-live" : "npm-run-all -p watch server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
