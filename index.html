@@ -18,11 +18,8 @@
       crossorigin=""
     />
 
-
     <title>IP Address Tracker | [cipher's solution]</title>
     <link rel="stylesheet" href="css/main.css" />
-
- 
   </head>
   <body>
     <!-- INPUT IP SECTION SECTION -->
@@ -55,7 +52,9 @@
 
         <div class="display__block db">
           <div class="db__title">Time Zone</div>
-          <div class="db__content db__content--zone">UTC <span>Loading </span></div>
+          <div class="db__content db__content--zone">
+            UTC <span>Loading </span>
+          </div>
         </div>
 
         <div class="display__block db">
@@ -67,24 +66,23 @@
 
     <!-- MAP DISPLAY SECTION -->
     <section class="map-section" id="map-section">
-      <div id="map"> </div>
-
-
+      <div id="map"></div>
     </section>
-
 
     <section class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a>.<br> 
-         Coded by <a href="http://chiefcipher.netlify.app/">Yakubu Samuel | [cipher]</a>.
+        >Frontend Mentor</a
+      >.<br />
+      Coded by
+      <a href="http://chiefcipher.netlify.app/">Yakubu Samuel | [cipher]</a>.
     </section>
 
     <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin="" 
-  ></script>
-  <script src="main.js"></script>
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="main.js"></script>
   </body>
 </html>
