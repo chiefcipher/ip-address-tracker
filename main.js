@@ -16,7 +16,8 @@ const inputSpace = document.querySelector('.ip-value')  ;
 
 const submitBtn= document.querySelector("#properties > form > button") 
 submitBtn.addEventListener('click' , (e)=> { 
-    e.preventDefault()  ; //DISABLE DEFAULT EVENT ON SUBMIT BTN 
+    e.preventDefault()  ; //DISABLE DEFAULT EVENT ON SUBMIT BTN  
+    getPositionDetails(inputSpace.value)
 })
 
 
