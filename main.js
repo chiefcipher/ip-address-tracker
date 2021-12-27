@@ -5,24 +5,25 @@ const baseUrl = 'https://api.ipify.org/?format=json';
  fetch (baseUrl)
     .then( response => response.json())
     .then (data => { 
-        inputSpace.value = data.ip 
+        inputSpace.value = data.ip  
         getPositionDetails (data.ip)
 
 }).catch (err => { 
     console.log(err,'Error fetching ip address')
 })
-    
-const inputSpace = document.querySelector('.ip-value')  ;
+  
 
+// 
+const inputSpace = document.querySelector('.ip-value')  ;
 const submitBtn= document.querySelector("#properties > form > button") 
 submitBtn.addEventListener('click' , (e)=> { 
-    e.preventDefault()  ; //DISABLE DEFAULT EVENT ON SUBMIT BTN  
+    e.preventDefault()  ; //DISABLE DEFAULT EVENT ON SUBMIT BTN   
     getPositionDetails(inputSpace.value)
 })
 
 
 
-let ipAddress , timeZone,ISP , locality ; 
+
 
 const getPositionDetails = (ip) => {     
 const yek= 'at_FwAPdWr1oSWqo8xglR3MBEMHgeJ37' ; 
@@ -40,7 +41,6 @@ fetch ( apiUrl )
     const lng = data.location.lng ; 
 
     updateDetails(ipAddress, zone , isp  , locality   )
-
     plotGraph(lat , lng) 
 })
 .catch (err  => { 
@@ -50,46 +50,11 @@ fetch ( apiUrl )
 }
 
 //FUNCTION TO PLOT GRAP USING ---API
-/* const plotGraph  = function (lat , lng  ) {  
-    try { 
-        console.log(lat , lng )
-
-        let  map = L.map('map').setView([lat , lng ], 0 );
-
-       let tileLayer =  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hpZWZjaXBoZXIiLCJhIjoiY2t4bHVpMmZoMWs2OTJ3dWI3ZnM3dG1qNSJ9.vT1pLDVvVIzncKD5aGqA9g', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoiY2hpZWZjaXBoZXIiLCJhIjoiY2t4bHVpMmZoMWs2OTJ3dWI3ZnM3dG1qNSJ9.vT1pLDVvVIzncKD5aGqA9g' , 
-    }).addTo(map);
-    
-    const Icon = L.icon({
-        iconUrl: 'images/icon-location.svg',
-        // shadowUrl: 'images/icon-location.svg',
-    
-        iconSize:     [38, 95], // size of the icon
-        // shadowSize:   [50, 64], // size of the shadow
-        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-        // shadowAnchor: [4, 62],  // the same for the shadow
-        popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-    });
-    
-    L.marker([lat, lng ], {icon: Icon}).addTo(map);
-        
-
-    } 
-    catch (err) { 
-        console.log(err , 'at plot graph ')
-    }
-    
-} */
-
-
-//FUNCTION TO PLOT GRAP USING ---API
 let plotGraph  = function (lat , lng  ) {  
     try { 
+
+        let container = L.DomUtil.get('map'); 
+        if(container != null){ container._leaflet_id = null; } 
 
         let map = L.map('map').setView([lat , lng ], 13 );
         let tileLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hpZWZjaXBoZXIiLCJhIjoiY2t4bHVpMmZoMWs2OTJ3dWI3ZnM3dG1qNSJ9.vT1pLDVvVIzncKD5aGqA9g', {
@@ -101,7 +66,7 @@ let plotGraph  = function (lat , lng  ) {
         accessToken: 'pk.eyJ1IjoiY2hpZWZjaXBoZXIiLCJhIjoiY2t4bHVpMmZoMWs2OTJ3dWI3ZnM3dG1qNSJ9.vT1pLDVvVIzncKD5aGqA9g' , 
     }).addTo(map);
     
-    const Icon = L.icon({
+        let  Icon = L.icon({
         iconUrl: 'images/icon-location.svg',
         iconSize:     [38, 95], // size of the icon
     });
@@ -111,7 +76,8 @@ let plotGraph  = function (lat , lng  ) {
 
     } 
     catch (err) {  
-      document.querySelector('#err').innerHTML = err + 'error at plot graph '
+
+      console.log(err , ' at plot graph function')
     }
     
 } 
