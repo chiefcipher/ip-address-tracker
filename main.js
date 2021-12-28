@@ -102,16 +102,16 @@ const updateDetails = (ip , zone , isp , locality ) => {
 
 //FUNCTION TO HIDE DISPLAY BOX ON HOVER TO MAP 
 
-const toggleDisplay = ()=> {  
-    const propertiesBlock = document.querySelector('.properties__display') ;  
+// const toggleDisplay = ()=> {  
+//     const propertiesBlock = document.querySelector('.properties__display') ;  
     
-    document.querySelector('#map-section').addEventListener('mouseover' , ()=> { 
-        propertiesBlock.classList.remove('active')
-    })
-    document.querySelector('#map-section').addEventListener('mouseout' , ()=> { 
-        propertiesBlock.classList.add('active')
-    })
-}
+//     document.querySelector('#map-section').addEventListener('mouseover' , ()=> { 
+//         propertiesBlock.classList.remove('active')
+//     })
+//     document.querySelector('#map-section').addEventListener('mouseout' , ()=> { 
+//         propertiesBlock.classList.add('active')
+//     })
+// }
 
-toggleDisplay()
+// toggleDisplay()
 
